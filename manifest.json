@@ -1,27 +1,44 @@
 {
-	"name":"Wayback machine",
-	"author":"Internet Archive",
-	"description":"Reduce annoying 404 page by automatically checking for an archived copy in the wayback machine",
-	"icons":{
-		"32":"icon1.png",
-		"96":"icon1@2x.png"
-	},
-	"version":"1",
-	"permissions":[
-		"tabs",
+  
+  "name": "Wayback Machine",
+    "author":"Internet Archive",
+  "description": "Reduce annoying 404 pages by automatically checking for an archived copy in the Wayback Machine.",
+  "version": "1.8.1",
+  
+  "icons": {
+    "48": "images/icon.png",
+    "96": "images/icon@2x.png"
+  },
+  "permissions": [
+        "*://*/*",
+      "tabs",
 		"webrequest",
 		"http://*/*",
 		"https://*/*",
 		"<all_urls>"
-	],
-	"browser_action":{
+        
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": true
+  },
+  "web_accessible_resources": [
+    "images/insetIcon.svg",
+    "images/close.svg",
+    "images/logo.gif",
+    "scripts/client.js",
+      "scripts/RTcontent.js",
+"scripts/sequences.js",
+"scripts/d3.js",
+"css/RTstyle.css",
+"css/sequences.css",
+      "css/googlestyle.css"
+  ],
+  "browser_action":{
 		"default_icon":{
-			"20":"icon.png"
+			"20":"images/icon.png"
 		},
 		"default_title":"Wayback machine",
-		"default_popup":"popup/popup.html"
-	},
-	  "background":{
-    	"scripts": ["scripts/background.js"],"persistent": true
+		"default_popup":"index.html"
 	}
 }
